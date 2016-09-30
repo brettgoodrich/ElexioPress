@@ -34,7 +34,7 @@ class ElexioPress
     public function add_plugin_page()
     {
         add_submenu_page(
-						'options-general.php', // Goes under Posts
+						'options-general.php', // Goes under Settings
             'ElexioPress', // Title that goes in h2 on settings page
             'ElexioPress', // Title that goes into the WordPress nav menu
             'manage_options', // User permissions required to see, access, and edit this settings page
@@ -99,13 +99,6 @@ class ElexioPress
             'elexiopress_keys_section'
         );
 
-        add_settings_field(
-            'alert_enbl',
-            'Enabled',
-            array( $this, 'alert_enbl_callback' ),
-            'elexiopress_menu',
-            'elexiopress_keys_section'
-        );
     }
 
     /**
@@ -121,9 +114,6 @@ class ElexioPress
 
         if( isset( $input['elexiopress_keys_apipass'] ) )
             $new_input['elexiopress_keys_apipass'] = sanitize_text_field( $input['elexiopress_keys_apipass'] );
-
-        if( isset( $input['alert_enbl'] ) )
-            $new_input['alert_enbl'] = absint( $input['alert_enbl'] );
 
         return $new_input;
     }
@@ -156,14 +146,6 @@ class ElexioPress
             '<input type="text" id="elexiopress_keys_apipass" name="elexiopress_keys[elexiopress_keys_apipass]" value="%s" style="width:90%%;" />',
             isset( $this->options['elexiopress_keys_apipass'] ) ? esc_attr( $this->options['elexiopress_keys_apipass']) : ''
         );
-    }
-
-    public function alert_enbl_callback()
-    {
-		echo '<input type="checkbox" id="alert_enbl" name="elexiopress_keys[alert_enbl]" value="1"';
-//		print_r($this->options['alert_enbl']);
-		if($this->options['alert_enbl']) echo ' checked="checked"';
-		echo '/> Enabled if checked';
     }
 
 }
