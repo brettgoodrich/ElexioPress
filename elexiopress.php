@@ -34,7 +34,7 @@ class ElexioPress
     public function add_plugin_page()
     {
         add_submenu_page(
-						'edit.php', // Goes under Posts
+						'options.php', // Goes under Posts
             'ElexioPress', // Title that goes in h2 on settings page
             'ElexioPress', // Title that goes into the WordPress nav menu
             'manage_options', // User permissions required to see, access, and edit this settings page
