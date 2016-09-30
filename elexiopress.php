@@ -49,7 +49,7 @@ class ElexioPress
     public function create_admin_page()
     {
         // Set class property
-        $this->options = get_option( 'elexiopress_data' );
+        $this->options = get_option( 'elexiopress_keys' );
         ?>
         <div class="wrap">
             <h2>ElexioPress</h2>
