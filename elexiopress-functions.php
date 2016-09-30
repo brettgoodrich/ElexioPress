@@ -13,10 +13,11 @@ function print_r2($val){
 }
 
 function ep_getPerson($person) {
+	?>
 	var oPostData = {
-	    ActivationKey: $elexiopress_settings[elexiopress_keys_activationkey],
-	    APIPass: $elexiopress_settings[elexiopress_keys_apipass],
-	    SearchString: $person
+	    ActivationKey: <?php echo $elexiopress_settings[elexiopress_keys_activationkey]; ?>,
+	    APIPass: <?php echo $elexiopress_settings[elexiopress_keys_apipass]; ?>,
+	    SearchString: <?php echo $person; ?>
 	};
 
 	$jQuery.ajax({
@@ -45,5 +46,6 @@ function ep_getPerson($person) {
 	        */
 	    });
 	});
+	<?php
 }
 ?>
