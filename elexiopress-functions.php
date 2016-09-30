@@ -18,6 +18,7 @@ function elexiopress_getPerson($input) {
 	.'&APIPass='.$elexiopress_settings['elexiopress_keys_apipass']
 	.'SearchString'.$input;
 	$request = new WP_Http;
+	print_r2($headers);
 	$result = $request->request( $api_url , array( 'method' => 'POST', 'body' => $headers ) );
 	print_r2($result);
 }
