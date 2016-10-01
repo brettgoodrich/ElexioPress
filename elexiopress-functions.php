@@ -46,10 +46,33 @@ function elexiopress_FindPersonByName($input) {
 }
 
 function elexiopress_GetPerson($input) {
-	$args['url'] = 'GetPerson';
-	$args['body'] = elexiopress_getapikeys();
-	$args['body'] .= '&ContactID='.$input;
-	$body = elexiopress_request($args);
-	return $body;
+	if (is_numeric($input)) { // If a numeric ID was not given, throw error
+		$args['url'] = 'GetPerson';
+		$args['body'] = elexiopress_getapikeys();
+		$args['body'] .= '&ContactID='.$input;
+		$body = elexiopress_request($args);
+		return $body;
+	} else {
+		 return 'ERROR: Input must be Elexio ID number. If searching by name, use elexiopress_FindPersonByName()';
+	}
 }
+
+function elexiopress_FindEventsByDate($startDate = false, $endDate = false, $reqTag = '', $forbiddenTag1 = '', $forbiddenTag2 = '') {
+//&StartDate=string&EndDate=string&MustBeTagged=string&MustBeTagged=string&MustNotBeTagged=string&MustNotBeTagged=string
+	$didFail = '';
+	$args['url'] = 'FindEventsByDate';
+	$args['body'] = elexiopress_getapikeys();
+	if ($startDate) { $args['body'] .= '&StartDate='.$startDate; 	} else { $didFail .= "\nERROR: startDate missing\n"; }
+	if ($endDate) 	{ $args['body'] .= '&EndDate='.$endDate; 			} else { $didFail .= "\nERROR: endDate missing\n"; }
+	$args['body'] .= '&MustBeTagged='.$reqTag;
+	$args['body'] .= '&MustNotBeTagged='.$forbiddenTag1;
+	$args['body'] .= '&MustNotBeTagged='.$forbiddenTag2;
+	if (!$didFail) {
+		$body = elexiopress_request($args);
+		return $body;
+	} else {
+		return $didFail;
+	}
+}
+
 ?>
