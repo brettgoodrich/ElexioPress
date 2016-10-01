@@ -27,7 +27,8 @@ function elexiopress_request($args) {
 		$api_url = 'https://www.elexioamp.com/Services/Database/API.asmx/'.$args['url'];
 		$request = new WP_Http;
 		$response = $request->request( $api_url , array( 'method' => 'POST', 'body' => $args['body'] ) );
-		return wp_remote_retrieve_body($response);
+		$result = new SimpleXMLElement(wp_remote_retrieve_body($response));
+		return $result;
 	} else {
 		return '<pre>Request Func Error. ARGS: url{'.$args['url'].'} body{'.$args['body'].'}</pre>';
 	}
