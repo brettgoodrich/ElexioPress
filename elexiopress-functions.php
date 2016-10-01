@@ -37,19 +37,19 @@ function elexiopress_request($args) {
 API BASE FUNCTIONS
 *************************/
 
-function elexiopress_FindPersonByName($input) {
+function elexiopress_FindPersonByName($name) {
 	$args['url'] = 'FindPersonByName';
 	$args['body'] = elexiopress_getapikeys();
-	$args['body'] .= '&SearchString='.$input;
+	$args['body'] .= '&SearchString='.$name;
 	$body = elexiopress_request($args);
 	return $body;
 }
 
-function elexiopress_GetPerson($input) {
-	if (is_numeric($input)) { // If a numeric ID was not given, throw error
+function elexiopress_GetPerson($personID) {
+	if (is_numeric($personID)) { // If a numeric ID was not given, throw error
 		$args['url'] = 'GetPerson';
 		$args['body'] = elexiopress_getapikeys();
-		$args['body'] .= '&ContactID='.$input;
+		$args['body'] .= '&ContactID='.$personID;
 		$body = elexiopress_request($args);
 		return $body;
 	} else {
@@ -71,6 +71,24 @@ function elexiopress_FindEventsByDate($startDate = false, $endDate = false, $req
 		return $body;
 	} else {
 		return $didFail;
+	}
+}
+
+function elexiopress_LookupCodes($code) {
+	if (	$code == 6 	|| 	// AgeGroup
+				$code == 30 ||	// Campus
+				$code == 9 	||	// FamilyPosition
+				$code == 8 	||	// FamilyType
+				$code == 21	||	// Fund
+				$code == 31	||	// GivingMethod
+				$code == 11 ||	// MaritalStatus
+				$code == 5			// Status
+	) {
+		$args['url'] = 'LookupCodes';
+		$args['body'] = elexiopress_getapikeys();
+		$args['body'] .= '&CodeType='.$code;
+	} else {
+		//Throw error
 	}
 }
 
