@@ -13,13 +13,14 @@ function print_r2($val){
 }
 
 function elexiopress_getPerson($input) {
+	$elexiopress_settings = get_option('elexiopress_keys');
 	$api_url = 'https://www.elexioamp.com/Services/Database/API.asmx/FindPersonByName';
-	$headers = 'ActivationKey='.$elexiopress_settings['elexiopress_keys_activationkey']
-	.'&APIPass='.$elexiopress_settings['elexiopress_keys_apipass']
-	.'SearchString'.$input;
+	$args = 'ActivationKey='.$elexiopress_settings[elexiopress_keys_activationkey]
+	.'&APIPass='.$elexiopress_settings[elexiopress_keys_apipass]
+	.'&SearchString='.$input;
 	$request = new WP_Http;
-	print_r2($headers);
-	$result = $request->request( $api_url , array( 'method' => 'POST', 'body' => $headers ) );
-	print_r2($result);
+	$response = $request->request( $api_url , array( 'method' => 'POST', 'body' => $args ) );
+	$body = wp_remote_retrieve_body($response);
+	print_r2($body);
 }
 ?>
