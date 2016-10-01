@@ -7,7 +7,7 @@ UTILITIES
 *************************/
 
 function print_r2($val){
-        echo '<pre>';
+        echo '<pre style="color:white !important;">';
         print_r($val);
         echo  '</pre>';
 }
