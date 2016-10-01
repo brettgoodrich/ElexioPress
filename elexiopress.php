@@ -13,5 +13,5 @@ $elexiopress_settings = get_option('elexiopress_keys');
 
 include( ElexioPress_Path . 'elexiopress-admin.php' );
 include( ElexioPress_Path . 'elexiopress-functions.php' );
-include( ElexioPress_Path . 'elexiopress-functions-xmlparser.php' );
+include( ElexioPress_Path . 'elexiopress-errorhandling.php' );
 ?>

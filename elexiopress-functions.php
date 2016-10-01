@@ -54,7 +54,7 @@ function elexiopress_GetPerson($personID) {
 		$body = elexiopress_request($args);
 		return $body;
 	} else {
-		 return 'ERROR: Input must be Elexio ID number. If searching by name, use elexiopress_FindPersonByName()';
+		 return 'ERROR: Input must be Elexio ID number. If searching by name, use elexiopress_FindPersonByName() '.'<pre>Request Func Error. ARGS: url{'.$args['url'].'} body{'.$args['body'].'}</pre>';;
 	}
 }
 
@@ -88,8 +88,10 @@ function elexiopress_LookupCodes($code) {
 		$args['url'] = 'LookupCodes';
 		$args['body'] = elexiopress_getapikeys();
 		$args['body'] .= '&CodeType='.$code;
+		$body = elexiopress_request($args);
+		return $body;
 	} else {
-		//Throw error
+		return '<pre>Request Func Error. ARGS: url{'.$args['url'].'} body{'.$args['body'].'}</pre>';
 	}
 }
 
