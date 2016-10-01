@@ -58,7 +58,6 @@ function elexiopress_GetPerson($input) {
 }
 
 function elexiopress_FindEventsByDate($startDate = false, $endDate = false, $reqTag = '', $forbiddenTag1 = '', $forbiddenTag2 = '') {
-//&StartDate=string&EndDate=string&MustBeTagged=string&MustBeTagged=string&MustNotBeTagged=string&MustNotBeTagged=string
 	$didFail = '';
 	$args['url'] = 'FindEventsByDate';
 	$args['body'] = elexiopress_getapikeys();

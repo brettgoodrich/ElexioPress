@@ -1,6 +1,7 @@
 ElexioPress 0.1
 
 ## Usage
+There's a good number of functions. I'll update this readme at some point.
 
 #### WordPress backend
 ElexioPress' settings are given their own page parented to "Settings". You can easily edit key information.
