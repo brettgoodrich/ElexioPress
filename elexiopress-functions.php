@@ -43,7 +43,12 @@ function elexiopress_FindPersonByName($name) {
 	$args['body'] = elexiopress_getapikeys();
 	$args['body'] .= '&SearchString='.$name;
 	$body = elexiopress_request($args);
-	return $body;
+	// If no people matched the name, tell the user.
+	if (empty($body)) {
+		return "No matches for \"$name\" found.";
+	} else {
+		return $body;
+	}
 }
 
 function elexiopress_GetPerson($personID) {
