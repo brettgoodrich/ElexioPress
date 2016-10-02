@@ -14,12 +14,3 @@ elexiopress_FindEventsByDate('startDate', 'endDate', 'musthaveTag', 'forbiddenTa
 elexiopress_LookupCodes(numericCode)
 ```
 Advanced documentation is online at https://www.elexioamp.com/Services/Database/API.asmx.
-
-You can access the plugin's settings with `elexiopress()`, which will `return` an array like so:
-```
-Array
-(
-    [elexiopress_keys_activationkey] => the activation key
-    [elexiopress_keys_apipass] => the apipass
-)
-```
