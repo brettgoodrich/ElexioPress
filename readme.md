@@ -15,6 +15,7 @@ ElexioPress' settings page is parented to "Settings". You'll need to set your AP
 ```
 elexiopress_FindPersonByName('nameToSearch')
 elexiopress_FindPersonByEmail('emailToSearch')
+elexiopress_FindPersonByPhoneNumber(numberToSearch)
 elexiopress_FindHouseholdByName('emailToSearch') // Note that Elexio's API searches for an email match, not a name match.
 elexiopress_GetPerson('personID')
 elexiopress_GetSmallGroups()

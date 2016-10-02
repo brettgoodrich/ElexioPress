@@ -12,6 +12,10 @@ function print_r2($val){
         echo  '</pre>';
 }
 
+function reduceToNumber($input) {
+	return preg_replace("/[^0-9]/","", $input);
+}
+
 function elexiopress() {
 	return get_option('elexiopress_keys');
 }
@@ -59,7 +63,22 @@ function elexiopress_FindPersonByEmail($email) {
 	$body = elexiopress_request($args);
 	// If no people matched the name, tell the user.
 	if (empty($body)) {
-		return "No matches for \"$email\" found.";
+		return "No matches for $email found.";
+	} else {
+		return $body;
+	}
+}
+
+
+function elexiopress_FindPersonByPhoneNumber($number) {
+	$number = reduceToNumber($number);
+	$args['url'] = 'FindPersonByPhoneNumber';
+	$args['body'] = elexiopress_getapikeys();
+	$args['body'] .= '&SearchString='.$number;
+	$body = elexiopress_request($args);
+	// If no people matched the name, tell the user.
+	if (empty($body)) {
+		return "No matches for $number found.";
 	} else {
 		return $body;
 	}
