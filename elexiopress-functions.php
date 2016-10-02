@@ -14,6 +14,7 @@ function print_r2($val){
 
 function reduceToNumber($input) {
 	return preg_replace("/[^0-9]/","", $input);
+	/* Found on StackOverflow: http://stackoverflow.com/questions/6604455/php-code-to-remove-everything-but-numbers */
 }
 
 function elexiopress() {
@@ -54,6 +55,10 @@ function elexiopress_FindPersonByName($name) {
 		return $body;
 	}
 }
+// Other ways to call the same function
+function elexiopress_FindPerson($input) {
+	return elexiopress_FindPersonByName($input);
+}
 
 
 function elexiopress_FindPersonByEmail($email) {
@@ -83,6 +88,10 @@ function elexiopress_FindPersonByPhoneNumber($number) {
 		return $body;
 	}
 }
+// Other ways to call the same function
+function elexiopress_FindPersonByPhone($number) {
+	return elexiopress_FindPersonByPhoneNumber($number);
+}
 
 
 function elexiopress_FindHouseholdByName($email) {
@@ -98,6 +107,13 @@ function elexiopress_FindHouseholdByName($email) {
 		return $body;
 	}
 }
+// Other ways to call the same function
+function elexiopress_FindHouseholdByEmail($email) {
+	return elexiopress_FindHouseholdByName($email);
+}
+function elexiopress_FindHouseByEmail($email) {
+	return elexiopress_FindHouseholdByName($email);
+}
 
 
 function elexiopress_GetPerson($personID) {
@@ -110,6 +126,10 @@ function elexiopress_GetPerson($personID) {
 	} else {
 		 return 'ERROR: Input must be Elexio ID number. If searching by name, use elexiopress_FindPersonByName() '.'<pre>Request Func Error. ARGS: url{'.$args['url'].'} body{'.$args['body'].'}</pre>';;
 	}
+}
+// Other ways to call the same function
+function elexiopress_FindPersonByID($input) {
+	return elexiopress_GetPerson($input);
 }
 
 
@@ -157,6 +177,10 @@ function elexiopress_LookupCodes($code) {
 	} else {
 		return '<pre>Invalid LookupCode. ARGS: url{'.$args['url'].'} body{'.$args['body'].'}</pre>';
 	}
+}
+// Other ways to call the same function
+function elexiopress_LookupCode($input) {
+	return elexiopress_LookupCodes($input);
 }
 
 ?>
