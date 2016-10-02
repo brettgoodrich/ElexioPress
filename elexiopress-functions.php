@@ -52,6 +52,21 @@ function elexiopress_FindPersonByName($name) {
 }
 
 
+function elexiopress_FindHouseholdByName($email) {
+	// Elexio's API actually searches for email matches, not name matches. Don't ask me!
+	$args['url'] = 'FindHouseholdByName';
+	$args['body'] = elexiopress_getapikeys();
+	$args['body'] .= '&SearchString='.$email;
+	$body = elexiopress_request($args);
+	// If no households matched the email, tell the user.
+	if (empty($body)) {
+		return "No households with \"$email\" found. Note that this function actually requires an email, not a name.";
+	} else {
+		return $body;
+	}
+}
+
+
 function elexiopress_GetPerson($personID) {
 	if (is_numeric($personID)) { // If a numeric ID was not given, throw error
 		$args['url'] = 'GetPerson';
