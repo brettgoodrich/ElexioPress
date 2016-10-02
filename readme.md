@@ -13,6 +13,7 @@ elexiopress_GetPerson('personID')
 elexiopress_FindEventsByDate('startDate', 'endDate', 'musthaveTag', 'forbiddenTag1', 'forbiddenTag2')
 elexiopress_LookupCodes(numericCode)
 ```
+Advanced documentation is online at https://www.elexioamp.com/Services/Database/API.asmx.
 
 You can access the plugin's settings with `elexiopress()`, which will `return` an array like so:
 ```

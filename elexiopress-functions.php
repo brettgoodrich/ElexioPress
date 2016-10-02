@@ -51,6 +51,7 @@ function elexiopress_FindPersonByName($name) {
 	}
 }
 
+
 function elexiopress_GetPerson($personID) {
 	if (is_numeric($personID)) { // If a numeric ID was not given, throw error
 		$args['url'] = 'GetPerson';
@@ -62,6 +63,7 @@ function elexiopress_GetPerson($personID) {
 		 return 'ERROR: Input must be Elexio ID number. If searching by name, use elexiopress_FindPersonByName() '.'<pre>Request Func Error. ARGS: url{'.$args['url'].'} body{'.$args['body'].'}</pre>';;
 	}
 }
+
 
 function elexiopress_FindEventsByDate($startDate = false, $endDate = false, $reqTag = '', $forbiddenTag1 = '', $forbiddenTag2 = '') {
 	$didFail = '';
@@ -80,6 +82,7 @@ function elexiopress_FindEventsByDate($startDate = false, $endDate = false, $req
 	}
 }
 
+
 function elexiopress_LookupCodes($code) {
 	if (	$code == 6 	|| 	// AgeGroup
 				$code == 30 ||	// Campus
@@ -96,7 +99,7 @@ function elexiopress_LookupCodes($code) {
 		$body = elexiopress_request($args);
 		return $body;
 	} else {
-		return '<pre>Request Func Error. ARGS: url{'.$args['url'].'} body{'.$args['body'].'}</pre>';
+		return '<pre>Invalid LookupCode. ARGS: url{'.$args['url'].'} body{'.$args['body'].'}</pre>';
 	}
 }
 
