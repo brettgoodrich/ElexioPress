@@ -3,7 +3,7 @@ ElexioPress 0.1
 Advanced documentation is online at https://www.elexioamp.com/Services/Database/API.asmx.
 
 ## Usage
-Heh. Documentation to be updated. Usage is only available through direct function calls at present moment, but backend is in the plan.
+Usage is only available through direct function calls at present moment, but backend is in the plan.
 
 Functions currently return a SimpleXMLElement with relevant data, straight from Elexio's API.
 
