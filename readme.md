@@ -1,16 +1,16 @@
 ElexioPress 0.1
 
 ## Usage
-There's a good number of functions. I'll update this readme at some point.
+Heh. Documentation to be updated. Usage is only available through direct function calls at present moment, but backend is in the plan.
 
 #### WordPress backend
-ElexioPress' settings are given their own page parented to "Settings". You can easily edit key information.
+ElexioPress' settings page is parented to "Settings". You'll need to set your API keys from there.
 
 #### Supported Functions
 ```
 elexiopress_FindPersonByName('name')
 elexiopress_GetPerson('personID')
-elexiopress_FindEventsByDate('startDate', 'endDate', 'reqTag', 'forbiddenTag1', 'forbiddenTag2')
+elexiopress_FindEventsByDate('startDate', 'endDate', 'musthaveTag', 'forbiddenTag1', 'forbiddenTag2')
 elexiopress_LookupCodes(numericCode)
 ```
 
