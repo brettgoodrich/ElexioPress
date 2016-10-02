@@ -18,6 +18,6 @@ elexiopress_FindPersonByPhoneNumber(numberToSearch)
 elexiopress_FindHouseholdByName('emailToSearch') // Note that Elexio's API searches for an email match, not a name match.
 elexiopress_GetPerson('personID')
 elexiopress_GetSmallGroups()
-elexiopress_FindEventsByDate('startDate', 'endDate', 'musthaveTag', 'forbiddenTag1', 'forbiddenTag2')
+elexiopress_FindEventsByDate('startDate', 'endDate', ['musthavethisTag', 'forbiddenTag1', 'forbiddenTag2'])
 elexiopress_LookupCodes(numericCode)
 ```
