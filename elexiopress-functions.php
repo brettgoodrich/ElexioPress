@@ -98,6 +98,14 @@ function elexiopress_FindEventsByDate($startDate = false, $endDate = false, $req
 }
 
 
+function elexiopress_GetSmallGroups() {
+	$args['url'] = 'GetSmallGroups';
+	$args['body'] = elexiopress_getapikeys();
+	$body = elexiopress_request($args);
+	return $body;
+}
+
+
 function elexiopress_LookupCodes($code) {
 	if (	$code == 6 	|| 	// AgeGroup
 				$code == 30 ||	// Campus
