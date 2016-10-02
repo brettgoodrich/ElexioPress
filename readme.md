@@ -16,7 +16,7 @@ ElexioPress' settings page is parented to "Settings". You'll need to set your AP
 elexiopress_FindPersonByName('nameToSearch')
 elexiopress_FindHouseholdByName('emailToSearch') // Note that Elexio's API searches for an email match, not a name match.
 elexiopress_GetPerson('personID')
-elexiopress_GetSmallGroups
+elexiopress_GetSmallGroups()
 elexiopress_FindEventsByDate('startDate', 'endDate', 'musthaveTag', 'forbiddenTag1', 'forbiddenTag2')
 elexiopress_LookupCodes(numericCode)
 ```
