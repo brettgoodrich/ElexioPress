@@ -9,7 +9,7 @@ Functions currently return the body of a SimpleXMLElement with relevant data, st
 Accessing data from a SimpleXMLElement is detailed here: http://php.net/manual/en/simplexml.examples-basic.php
 
 #### WordPress backend
-ElexioPress' settings page is parented to "Settings". You'll need to set your API keys from there.
+ElexioPress' settings page is parented to "Settings". You'll need to set your API keys from there. Access is restricted to users with 'unfiltered_html' permission.
 
 #### Supported Functions
 ```

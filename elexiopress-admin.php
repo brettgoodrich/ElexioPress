@@ -26,7 +26,7 @@ class ElexioPress
 						'options-general.php', // Goes under Settings
             'ElexioPress', // Title that goes in h2 on settings page
             'ElexioPress', // Title that goes into the WordPress nav menu
-            'manage_options', // User permissions required to see, access, and edit this settings page
+            'unfiltered_html', // User permissions required to see, access, and edit this settings page
             'elexiopress_menu', // The slug to refer to this menu by
             array( $this, 'create_admin_page' ) // Callback function that creates the settings page. $this makes it look in this class for the function.
         );
