@@ -5,7 +5,7 @@ Advanced documentation is online at https://www.elexioamp.com/Services/Database/
 ## Usage
 Usage is only available through direct function calls at present moment, but backend is in the plan.
 
-Functions currently return a SimpleXMLElement with relevant data, straight from Elexio's API.
+Functions currently return the body of a SimpleXMLElement with relevant data, straight from Elexio's API.
 Accessing data from a SimpleXMLElement is detailed here: http://php.net/manual/en/simplexml.examples-basic.php
 
 #### WordPress backend
