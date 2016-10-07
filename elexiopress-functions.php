@@ -151,6 +151,15 @@ function elexiopress_FindEventsByDate($startDate = false, $endDate = false, $req
 }
 
 
+function elexiopress_GetEventOccurrenceByID($eventid) {
+	$args['url'] = 'GetEventOccurrenceByID';
+	$args['body'] = elexiopress_getapikeys();
+	$args['body'] .= '&EventOccurrenceID='.$eventid;
+	$body = elexiopress_request($args);
+	return $body;
+}
+
+
 function elexiopress_GetSmallGroups() {
 	$args['url'] = 'GetSmallGroups';
 	$args['body'] = elexiopress_getapikeys();
