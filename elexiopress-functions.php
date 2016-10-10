@@ -56,9 +56,7 @@ function elexiopress_FindPersonByName($name) {
 	}
 }
 // Other ways to call the same function
-function elexiopress_FindPerson($input) {
-	return elexiopress_FindPersonByName($input);
-}
+function elexiopress_FindPerson($input) {	return elexiopress_FindPersonByName($input); }
 
 
 function elexiopress_FindPersonByEmail($email) {
@@ -89,9 +87,7 @@ function elexiopress_FindPersonByPhoneNumber($number) {
 	}
 }
 // Other ways to call the same function
-function elexiopress_FindPersonByPhone($number) {
-	return elexiopress_FindPersonByPhoneNumber($number);
-}
+function elexiopress_FindPersonByPhone($number) {	return elexiopress_FindPersonByPhoneNumber($number); }
 
 
 function elexiopress_FindHouseholdByName($email) {
@@ -108,12 +104,9 @@ function elexiopress_FindHouseholdByName($email) {
 	}
 }
 // Other ways to call the same function
-function elexiopress_FindHouseholdByEmail($email) {
-	return elexiopress_FindHouseholdByName($email);
-}
-function elexiopress_FindHouseByEmail($email) {
-	return elexiopress_FindHouseholdByName($email);
-}
+function elexiopress_FindHouseholdByEmail($email) {	return elexiopress_FindHouseholdByName($email); }
+function elexiopress_FindHouseByEmail($email) {			return elexiopress_FindHouseholdByName($email); }
+function elexiopress_FindFamilyByEmail($email) {		return elexiopress_FindHouseholdByName($email); }
 
 
 function elexiopress_GetPerson($personID) {
@@ -128,9 +121,7 @@ function elexiopress_GetPerson($personID) {
 	}
 }
 // Other ways to call the same function
-function elexiopress_FindPersonByID($input) {
-	return elexiopress_GetPerson($input);
-}
+function elexiopress_FindPersonByID($input) {	return elexiopress_GetPerson($input); }
 
 
 function elexiopress_FindEventsByDate($startDate = false, $endDate = false, $reqTag = '', $forbiddenTag1 = '', $forbiddenTag2 = '') {
@@ -158,6 +149,16 @@ function elexiopress_GetEventOccurrenceByID($eventid) {
 	$body = elexiopress_request($args);
 	return $body;
 }
+// Other ways to call the same function
+function elexiopress_GetEventOcurrenceByID($eventid) { 		return elexiopress_GetEventOccurrenceByID($eventid); }
+function elexiopress_GetEventOccurenceByID($eventid) { 		return elexiopress_GetEventOccurrenceByID($eventid); }
+function elexiopress_GetEventOcurenceByID($eventid) { 		return elexiopress_GetEventOccurrenceByID($eventid); }
+function elexiopress_GetEventByID($eventid) { 						return elexiopress_GetEventOccurrenceByID($eventid); }
+function elexiopress_FindEventOccurrenceByID($eventid) {	return elexiopress_GetEventOccurrenceByID($eventid); }
+function elexiopress_FindEventOcurrenceByID($eventid) { 	return elexiopress_GetEventOccurrenceByID($eventid); }
+function elexiopress_FindEventOccurenceByID($eventid) { 	return elexiopress_GetEventOccurrenceByID($eventid); }
+function elexiopress_FindEventOcurenceByID($eventid) { 		return elexiopress_GetEventOccurrenceByID($eventid); }
+function elexiopress_FindEventByID($eventid) {						return elexiopress_GetEventOccurrenceByID($eventid); }
 
 
 function elexiopress_GetSmallGroups() {
@@ -188,8 +189,6 @@ function elexiopress_LookupCodes($code) {
 	}
 }
 // Other ways to call the same function
-function elexiopress_LookupCode($input) {
-	return elexiopress_LookupCodes($input);
-}
+function elexiopress_LookupCode($input) {	return elexiopress_LookupCodes($input); }
 
 ?>
