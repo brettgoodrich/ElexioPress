@@ -23,7 +23,7 @@ elexiopress_GetSmallGroups()
 elexiopress_LookupCodes(numericCode)
 ```
 
-#### Up Next to add:
+#### Up next to add:
 ```
 GetEventOccurrenceByDate
 GetEventOccurrencesByDefinitionID

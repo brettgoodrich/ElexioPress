@@ -66,7 +66,7 @@ function elexiopress_FindPersonByEmail($email) {
 	$body = elexiopress_request($args);
 	// If no people matched the name, tell the user.
 	if (empty($body)) {
-		return "No matches for $email found.";
+		return "No matches for email: $email found.";
 	} else {
 		return $body;
 	}
